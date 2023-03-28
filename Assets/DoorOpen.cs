@@ -5,12 +5,12 @@ using UnityEngine;
 public class DoorOpen : MonoBehaviour
 {
     PlayerControl playerScript;
-    // Start is called before the first frame update
+    //Gatekey function
     void Start()
     {
         playerScript = GameObject.Find("Player").GetComponent<PlayerControl>();
     }
-
+    //The void function had to rely on the other code scripts otherwise it'll never work
     void OnMouseDown()
     {
         if(playerScript.hasKey == true)
@@ -20,7 +20,7 @@ public class DoorOpen : MonoBehaviour
     }
 
 
-    // Update is called once per frame
+    //This code just removes the door IF the key is obtained
     void Update()
     {
         

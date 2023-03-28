@@ -11,7 +11,7 @@ public class ItemInfo : MonoBehaviour
 
 
 
-    // Start is called before the first frame update
+    //This code indicates if the player is near a key
     void Start()
     {
         playerScript = GameObject.Find("Player").GetComponent<PlayerControl>();
@@ -21,13 +21,14 @@ public class ItemInfo : MonoBehaviour
         Debug.Log(itemName);
         playerScript.itemText.text = itemName;
     }
-
+    //These void functions only detects whenever the mouse finds and hovers over
     void OnMouseDown()
     {
+        //The public bool gets its signal right here ONLY if the key is obtained
         playerScript.hasKey = true;
         Destroy(gameObject);
     }
-    // Update is called once per frame
+    //It also makes the object begone when clicked
     void Update()
     {
         
