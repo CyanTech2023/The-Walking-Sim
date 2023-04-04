@@ -12,6 +12,8 @@ public class PlayerControl : MonoBehaviour
 
     CharacterController characterControl;
     public Transform playerCam;
+    public Camera mainCam;
+    public float castDist;
 
     Vector3 vel;
     public float lookSensitivity;
@@ -48,4 +50,23 @@ public class PlayerControl : MonoBehaviour
         characterControl.Move(vel * Time.deltaTime);
         //This mainly imputs the control of the player object with said void updates
     }
+
+    //This runs in the same speed as the physics engine
+    void FixedUpdate()
+    {
+        RaycastHit hit;
+        Vector3 rayStart = mainCam.ViewportToWorldPoint(Input.mousePosition);
+        if (Physics.Raycast(rayStart, playerCam.forward, out hit, castDist))
+        {
+            Debug.Log(hit.transform.name);
+        }
+
+    }
+
+    //Raycast is an invisible line from the camera and the object
+
+
+
+
+
 }
