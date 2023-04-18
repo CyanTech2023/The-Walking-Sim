@@ -16,12 +16,12 @@ public class ItemInfo : MonoBehaviour
     {
         playerScript = GameObject.Find("Player").GetComponent<PlayerControl>();
     }
-    //void OnMouseOver()
-    //{
-    //    Debug.Log(itemName);
-    //    playerScript.itemText.text = itemName;
-    //}
-    //We no longer need this void anymore
+    void OnMouseOver()
+    {
+        Debug.Log(itemName);
+        playerScript.itemText.text = itemName;
+    }
+    //We might need this void function
     //These void functions only detects whenever the mouse finds and hovers over
     void OnMouseDown()
     {

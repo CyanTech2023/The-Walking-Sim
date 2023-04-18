@@ -47,8 +47,8 @@ public class PlayerControl : MonoBehaviour
         vel.x = Input.GetAxis("Horizontal") * speed;
         //This imputs the float function to the vertical and horizontal axis
         vel = transform.TransformDirection(vel);
-        characterControl.Move(vel * Time.deltaTime);
-        //This mainly imputs the control of the player object with said void updates
+        characterControl.SimpleMove(vel);
+        //This mainly imputs the control of the player object with said void updates, it even makes the model for the player fall instead ignoring physics
     }
 
     //This runs in the same speed as the physics engine
